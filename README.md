@@ -16,6 +16,7 @@ sudo add-apt-repository universe && sudo apt-get update && sudo apt-get install 
 ```
 
 ### catppuccin hyprland
+https://github.com/catppuccin/hyprland
 
 ## waybar
 
@@ -24,6 +25,9 @@ Wayland status bar
 ```bash
 sudo apt install waybar
 ```
+
+### catppuccin waybar
+https://github.com/catppuccin/waybar
 
 ## nwg-look
 
@@ -34,7 +38,7 @@ sudo apt install nwg-look
 ```
 
 ### catppuccin nwg-look
-
+https://github.com/catppuccin/gtk
 
 ## wlogout
 
@@ -62,6 +66,7 @@ sudo apt install swaylock
 ```
 
 ### catppuccin swaylock
+https://github.com/catppuccin/swaylock
 
 ## swaybg
 
@@ -81,7 +86,7 @@ sudo apt install wofi
 ```
 
 ### catppuccin wofi
-
+https://github.com/quantumfate/wofi
 
 ## starship
 
@@ -93,7 +98,7 @@ sudo apt install starship
 ```
 
 ### catppuccin starship
-
+https://github.com/catppuccin/starship
 
 ## nvim
 
@@ -106,7 +111,7 @@ ln -s /opt/nvim-linux-x86_64/bin/nvim /usr/local/bin/nvim
 ```
 
 ### catppuccin nvim
-
+https://github.com/catppuccin/nvim
 
 ## lazyvim
 
@@ -117,9 +122,6 @@ git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 ```
 
-### catppuccin lazyvim
-
-
 ## tmux
 
 Terminal multiplexer
@@ -129,7 +131,7 @@ sudo apt install tmux
 ```
 
 ### catppuccin tmux
-
+https://github.com/catppuccin/tmux
 
 ## kubectx
 
@@ -166,15 +168,6 @@ wget https://github.com/derailed/k9s/releases/latest/download/k9s_linux_amd64.de
 
 ### catppuccin k9s
 https://github.com/catppuccin/k9s
-1. Download the theme files & copy them into your k9s skins directory
-```bash
-OUT="${XDG_CONFIG_HOME:-$HOME/.config}/k9s/skins"
-mkdir -p "$OUT"
-curl -L https://github.com/catppuccin/k9s/archive/main.tar.gz | tar xz -C "$OUT" --strip-components=2 k9s-main/dist
-```
-
-3. Edit your  **config.yaml**  so that it sets  k9s.ui.skin to a Catppuccin flavor
-   
 
 ## fzf
 fzf is a general-purpose command-line fuzzy finder
@@ -183,3 +176,10 @@ Used to get fuzzy finding when using kubectx/kubens
 ```bash
 sudo apt install fzf
 ```
+
+## font
+
+The font used is CaskaydyaMono Nerd Font
+https://www.nerdfonts.com/font-downloads
+
+How to install: https://gist.github.com/matthewjberger/7dd7e079f282f8138a9dc3b045ebefa0
