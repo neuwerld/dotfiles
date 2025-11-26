@@ -15,6 +15,8 @@ Hyprland is a tiling WM for Wayland
 sudo add-apt-repository universe && sudo apt-get update && sudo apt-get install -y hyprland
 ```
 
+https://wiki.hypr.land/Getting-Started/Installation/
+
 ### catppuccin hyprland
 https://github.com/catppuccin/hyprland
 
@@ -48,6 +50,9 @@ Wlogout is a logout menu for wayland environments
 sudo apt install wlogout
 ```
 
+### catppuccin wlogout
+https://github.com/catppuccin/wlogout
+
 ## swayidle
 
 swayidle - Sway's idle management daemon
@@ -75,6 +80,19 @@ swaybg is a wallpaper utility for Wayland compositors
 ```bash
 sudo apt install swaybg
 ```
+
+## swaync
+
+A simple notification daemon with a GTK gui for notifications and the control center
+
+```bash
+sudo apt install sway-notification-center
+```
+
+
+### catppuccin swaync
+https://github.com/catppuccin/swaync
+
 
 ## wofi
 
