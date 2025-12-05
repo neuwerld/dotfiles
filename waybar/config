@@ -24,14 +24,15 @@
     ],
     
      "hyprland/workspaces": {
-         "disable-scroll": false,
-         "all-outputs": true,
-         "warp-on-scroll": false,
-         "format": "{icon}",
-         "format-icons": {
-             "1": "1: ",
-             "2": "2: ",
-             "8": "8: ",
+       "disable-scroll": false,
+       "all-outputs": true,
+       "warp-on-scroll": false,
+       "format": "{icon}",
+       "format-icons": {
+             "1": ">_ main",
+             "2": " chat",
+             "3": " code",
+             "8": " music",
 //             "urgent": "",
 //             "active": "",
 //             "default": ""
@@ -181,7 +182,7 @@
             "portable": "",
             "car": "",
         },
-        "on-click": "foot --app-id pulsemixer pulsemixer"
+        "on-click": "pavucontrol"
     },
     "custom/power": {
         "format" : "⏻ ",
