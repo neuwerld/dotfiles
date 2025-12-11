@@ -1,226 +1,219 @@
-@import url("./colors.css");
+/* Colors (gruvbox) */
+/*
+@define-color black	#282828;
+@define-color red	#cc241d;
+@define-color green	#98971a;
+@define-color yellow	#d79921;
+@define-color blue	#458588;
+@define-color purple	#b16286;
+@define-color aqua	#689d6a;
+@define-color gray	#a89984;
+@define-color brgray	#928374;
+@define-color brred	#fb4934;
+@define-color brgreen	#b8bb26;
+@define-color bryellow	#fabd2f;
+@define-color brblue	#83a598;
+@define-color brpurple	#d3869b;
+@define-color braqua	#8ec07c;
+@define-color white	#ebdbb2;
+@define-color bg2	#504945;
+*/
+
+/* Colors (dracula) */
+@define-color foreground	#f8f8f2;
+@define-color background	rgba(40, 42, 54, 0.5);
+@define-color orange	#ffb86c;
+@define-color gray	#44475a;
+@define-color black #21222c;
+@define-color red	#ff5555;
+@define-color green	#50fa7b;
+@define-color yellow	#f1fa8c;
+@define-color cyan	#8be9fd;
+@define-color blue	#6272a4;
+@define-color purple	#bd93f9;
+@define-color pink	#ff79c6;
+@define-color white #ffffff;
+@define-color brred #ff6e6e;
+@define-color brgreen #69ff94;
+@define-color bryellow #ffffa5;
+@define-color brcyan #a4ffff;
+@define-color brblue #6272a4;
+@define-color brpurple #d6acff;
+@define-color brpink #ff92df;
+
+@define-color arch_blue #89b4fa;
+
+@define-color workspace_background	@background;
+@define-color workspace_button	@foreground;
+@define-color workspace_active	@black;
+@define-color workspace_active_background	@green;
+@define-color workspace_urgent	@white;
+@define-color workspace_urgent_background	@brred;
+@define-color workspace_hover	@black;
+@define-color workspace_hover_background	@pink;
+@define-color critical	@red;
+@define-color warning	@yellow;
+
+
+@keyframes blink {
+    to {
+        background-color: @white;
+        color: @black;
+    }
+}
 
 * {
     border: none;
-    border-radius: 1px;
-    font-family: Cascadia Code NF;
-    font-size: 16px;
+    border-radius: 0;
+    font-family: "Inconsolata Nerd Font";
+    font-weight: bold;
+    font-size: 18px;
     min-height: 0;
 }
 
 window#waybar {
-    background-color: @mantle;
-    color: @text;
+    background: transparent;
+	  color: @foreground;
 }
 
-window#waybar.hidden {
-    opacity: 0.2;
+#workspaces {
+    background: @workspace_background;
+    opacity: 1;
+    transition: none;
+    padding: 5px 5px;
+    border-radius: 5px;
 }
 
-tooltip {
-    background-color: @base;
-    border: 1px solid @surface1;
-}
-
-tooltip label {
-    color: @text;
-}
-
-button {
-    box-shadow: inset 0 -3px transparent;
-    border: none;
-    border-radius: 1px;
-}
-
-button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px @text;
-}
-
-#workspaces button {
-    padding: 3 3;
-    background-color: @mantle;
-    color: @text;
-}
-
-#workspaces button:hover {
-    box-shadow: inherit;
-    text-shadow: inherit;
-    background-image: linear-gradient(0deg, @surface1, @mantle);
-}
-
-#workspaces button.focused {
-    background-image: linear-gradient(0deg, @mauve, @surface1);
-    box-shadow: inset 0 -3px @text;
+#workspaces button, #workspaces button.persistent {
+    background: transparent;
+    color: @workspace_button;
+    transition: none;
 }
 
 #workspaces button.active {
-    background-image: linear-gradient(0deg, @red, @mantle);
+    background: @workspace_active_background;
+    color: @workspace_active;
+    border-radius: 5px;
+/*
+    border-top: 2px solid @pink;
+    border-bottom: 2px solid @pink;
+*/
 }
 
 #workspaces button.urgent {
-    background-image: linear-gradient(0deg, @red, @mantle);
+    background: @workspace_urgent_background;
+    color: @workspace_urgent;
+    border-radius: 5px;
 }
 
-#taskbar button.active {
-    background-image: linear-gradient(0deg, @surface1, @mantle);
+#workspaces button:hover {
+    background: @workspace_hover_background;
+    color: @workspace_hover;
+    border-radius: 5px;
 }
 
-#mode {
-    background-color: @base;
-    box-shadow: inset 0 -2px @text;
+#taskbar {
+    background: @background;
+    border-radius: 5px;
+    margin: 5px 10px 5px 50px;
 }
 
-#mpris,
+tooltip {
+    background: @background;
+    opacity: 0.95;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: @purple;
+}
+
+tooltip label{
+    color: @grey;
+}
+
+#custom-rofi,
+#custom-lock_screen,
+#custom-power,
 #custom-weather,
-#clock,
-#language,
-#pulseaudio,
-#bluetooth,
-#network,
-#memory,
+#custom-khorshididate,
 #cpu,
-#temperature,
 #disk,
-#custom-kernel,
-#idle_inhibitor,
-#scratchpad,
-#mode,
-#tray {
-    padding: 0 10px;
-    margin: 5px 1px;
-    color: @text;
+#custom-updates,
+#memory,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#tray,
+#temperature,
+#backlight,
+#language {
+    background: @background;
+    opacity: 1;
+    padding: 0px 5px;
+    margin: 2px 0px 2px 0px;
 }
 
-#window,
-#workspaces {
-    margin: 0 4px;
+#disk.critical,
+#temperature.critical  {
+    background-color: @critical;
 }
 
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
+#disk.warning,
+#temperature.warning {
+    background-color: @warning;
 }
 
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
+#battery {
+    color: @green;
+    border-radius: 5px 0px 0px 5px;
 }
 
-#custom-weather {
-    background-color: @teal;
-    color: @mantle;
-    margin-right: 5px;
+#battery.discharging {
+    color: @foreground;
 }
 
-#custom-kernel {
-    background-color: @rosewater;
-    color: @mantle;
+#battery.warning:not(.charging) {
+    background: @warning;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.critical:not(.charging) {
+    background-color: @critical;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#custom-rofi {
+    color: @arch_blue;
+    border-radius: 5px 0px 0px 5px;
+}
+
+#custom-power {
+    color: @red;
+    border-radius: 0px 5px 5px 0px;
+    padding-right: 10px;
 }
 
 #clock {
-    background-color: @green;
-    color: @mantle;
 }
 
-@keyframes blink {
-    to {
-        background-color: @mantle;
-        color: @text;
-    }
-}
-
-label:focus {
-    background-color: @mantle;
-}
-
-#cpu {
-    background-color: @mauve;
-    color: @mantle;
-    min-width: 45px;
-}
-
-#memory {
-    background-color: @red;
-    color: @mantle;
-}
-
-#disk {
-    background-color: @flamingo;
-    color: @mantle;
-}
-
-#network {
-    background-color: @peach;
-    color: @mantle;
-}
-
-#network.disconnected {
-    background-color: red;
-    color: @mantle;
-}
-
-#bluetooth {
-    background-color: @maroon;
-    color: @mantle;
-    min-width: 40px;
-}
-
-#pulseaudio {
-    background-color: @yellow;
-    color: @mantle;
-}
-
-#pulseaudio.muted {
-    background-color: red;
-    color: @mantle;
-}
-
-#temperature {
-    background-color: @pink;
-    color: @mantle;
-    min-width: 37px;
-}
-
-#temperature.critical {
-    background-color: red;
-    color: @mantle;
-    min-width: 37px;
-}
-
-#mpris {
-    background-color: @base;
-    color: @text;
-}
-
+/*
 #tray {
-    background-color: @overlay0;
-    color: @text;
+    background: @background;
+    border-radius: 5px;
+    margin: 5px 50px 5px 10px;
+}
+*/
+#pulseaudio {
 }
 
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: @mantle;
-}
-
-#idle_inhibitor {
-    background-color: @base;
-    color: @text;
-    font-family: Inter;
-}
-
-#idle_inhibitor.activated {
-    background-color: @text;
-    color: @base;
-}
-
-#scratchpad {
-    background-color: @base;
-    color: @text;
-}
-
-#scratchpad.empty {
-    background-color: transparent;
+#pulseaudio.microphone {
 }

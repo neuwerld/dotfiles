@@ -18,5 +18,7 @@ telescope.setup({
   },
 })
 
+--require("catppuccin").setup()
+--vim.cmd.colorscheme("catppuccin")
 require("catppuccin").setup()
 vim.cmd.colorscheme("catppuccin")
