@@ -22,7 +22,8 @@ $character """
 palette = 'gruvbox_dark'
 
 [palettes.gruvbox_dark]
-color_fg0 = '#fbf1c7'
+#color_fg0 = '#fbf1c7'
+color_fg0 = '#000000'
 color_bg1 = '#3c3836'
 color_bg3 = '#665c54'
 color_blue = '#458588'
@@ -73,7 +74,7 @@ style = "fg:color_fg0 bg:color_yellow"
 format = '[@$ssh_symbol$hostname]($style)'
 
 [directory]
-style = "bg:color_aqua"
+style = "fg:color_fg0 bg:color_aqua"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -96,7 +97,7 @@ format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_blue)]($style)'
 
 [kubernetes]
 disabled = false
-symbol = "⎈"
+symbol = "⎈ "
 format = '[$symbol]($style)[$context( \($namespace\))]($style)'
 style = "bg:color_orange fg:color_fg0"
 

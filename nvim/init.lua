@@ -18,7 +18,6 @@ telescope.setup({
   },
 })
 
---require("catppuccin").setup()
---vim.cmd.colorscheme("catppuccin")
-require("catppuccin").setup()
-vim.cmd.colorscheme("catppuccin")
+require("gruvbox-material").setup()
+vim.cmd.colorscheme("gruvbox-material")
+vim.opt.mouse = "n"

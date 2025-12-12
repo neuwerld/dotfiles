@@ -46,7 +46,7 @@
 @define-color workspace_background	@background;
 @define-color workspace_button	@foreground;
 @define-color workspace_active	@black;
-@define-color workspace_active_background	@green;
+@define-color workspace_active_background	#d79921;
 @define-color workspace_urgent	@white;
 @define-color workspace_urgent_background	@brred;
 @define-color workspace_hover	@black;
@@ -107,8 +107,6 @@ window#waybar {
 }
 
 #workspaces button:hover {
-    background: @workspace_hover_background;
-    color: @workspace_hover;
     border-radius: 5px;
 }
 
