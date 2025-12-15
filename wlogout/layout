@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "swaylock -i /home/andreas/Pictures/dark-mountains.jpg",
+    "action" : "swaylock -i /home/andreas/Pictures/space-earth.png",
     "text" : "Lock",
     "keybind" : "l"
 }
